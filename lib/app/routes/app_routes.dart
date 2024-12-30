@@ -8,6 +8,8 @@ abstract class Routes {
   static const COMMUNITY_CHAT = _Paths.COMMUNITY_CHAT;
   static const CUPPORT_CENTRE = _Paths.CUPPORT_CENTRE;
   static const MAIN = _Paths.MAIN;
+  static const HOTLINE_NUMBERS = _Paths.HOTLINE_NUMBERS;
+  static const ADD_POST = _Paths.ADD_POST;
 }
 
 abstract class _Paths {
@@ -17,4 +19,6 @@ abstract class _Paths {
   static const COMMUNITY_CHAT = '/community-chat';
   static const CUPPORT_CENTRE = '/cupport-centre';
   static const MAIN = '/main';
+  static const HOTLINE_NUMBERS = '/hotline-numbers';
+  static const ADD_POST = '/add-post';
 }

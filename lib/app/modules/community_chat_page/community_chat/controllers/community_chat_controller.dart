@@ -1,12 +1,20 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
 class CommunityChatController extends GetxController {
-  //TODO: Implement CommunityChatController
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
+  }
+
+
+
+  Future<void> createPost(String message) async {
+    await FirebaseFirestore.instance.collection('posts').add({
+      'message': message,
+      'timestamp': FieldValue.serverTimestamp(),
+    });
   }
 
   @override
@@ -19,5 +27,5 @@ class CommunityChatController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+
 }

@@ -1,14 +1,17 @@
 import 'package:get/get.dart';
 
-
 import '../modules/blogs_page/blogs/bindings/blogs_binding.dart';
 import '../modules/blogs_page/blogs/views/blogs_view.dart';
+import '../modules/community_chat_page/add_post/bindings/add_post_binding.dart';
+import '../modules/community_chat_page/add_post/views/add_post_view.dart';
 import '../modules/community_chat_page/community_chat/bindings/community_chat_binding.dart';
 import '../modules/community_chat_page/community_chat/views/community_chat_view.dart';
 import '../modules/home_page/home/bindings/home_binding.dart';
 import '../modules/home_page/home/views/home_view.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
+import '../modules/support_centre_page/hotline_numbers/bindings/hotline_numbers_binding.dart';
+import '../modules/support_centre_page/hotline_numbers/views/hotline_numbers_view.dart';
 import '../modules/support_centre_page/support_centre/bindings/support_centre_binding.dart';
 import '../modules/support_centre_page/support_centre/views/support_centre_view.dart';
 
@@ -44,6 +47,16 @@ class AppPages {
       name: _Paths.MAIN,
       page: () => const MainView(),
       binding: MainBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOTLINE_NUMBERS,
+      page: () => const HotlineNumbersView(),
+      binding: HotlineNumbersBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_POST,
+      page: () => const AddPostView(),
+      binding: AddPostBinding(),
     ),
   ];
 }

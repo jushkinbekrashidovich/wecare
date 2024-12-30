@@ -1,23 +1,26 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
-class BlogsController extends GetxController {
-  //TODO: Implement BlogsController
+import '../../../../data/blog_model.dart';
 
-  final count = 0.obs;
+class BlogsController extends GetxController {
+  final blogs = <Blog>[].obs; // Reactive list to store blogs
+
   @override
   void onInit() {
     super.onInit();
+    fetchBlogs();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void fetchBlogs() async {
+    try {
+      final snapshot = await FirebaseFirestore.instance.collection('blogs').get();
+      final fetchedBlogs = snapshot.docs
+          .map((doc) => Blog.fromJson(doc.data() as Map<String, dynamic>))
+          .toList();
+      blogs.assignAll(fetchedBlogs); // Update the reactive list
+    } catch (e) {
+      Get.snackbar('Error', 'Failed to fetch blogs: $e');
+    }
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
