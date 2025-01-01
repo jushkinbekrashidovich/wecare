@@ -11,7 +11,8 @@ class AddPostView extends GetView<AddPostController> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        controller.focusNode.unfocus();
+        controller.focusNode1.unfocus();
+        controller.focusNode2.unfocus();
       },
       child: Scaffold(
         appBar: AppBar(
@@ -35,7 +36,46 @@ class AddPostView extends GetView<AddPostController> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
+                  Text(
+                    "Username".tr,
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(height: 6),
+                  SizedBox(
+                    height: 47,
+                    child: TextFormField(
+                      focusNode: controller.focusNode1,
+                      controller: controller.usernameText,
+                      maxLines: 1,
+                      cursorColor: AppColors.black,
+                      decoration: InputDecoration(
+                        contentPadding:
+                        EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.lighterGrey,
+                            width: 0.4,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.lighterGrey,
+                            width: 0.4,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.lighterGrey,
+                            width: 0.4,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
                   Text(
                     "Text".tr,
                     style: TextStyle(fontWeight: FontWeight.w500),
@@ -45,8 +85,8 @@ class AddPostView extends GetView<AddPostController> {
                     height: 300,
                     child: TextFormField(
 
-                      focusNode: controller.focusNode,
-                      controller: controller.textEditingController,
+                      focusNode: controller.focusNode2,
+                      controller: controller.contentText,
                       maxLines: 10,
                       cursorColor: AppColors.black,
                       decoration: InputDecoration(
@@ -79,14 +119,19 @@ class AddPostView extends GetView<AddPostController> {
                 ],
               ),
               SizedBox(height: 10),
-              Container(
+              GestureDetector(
+                onTap: (){
+                  controller.addPost();
+                },
+                child: Container(
 
-                padding: EdgeInsets.symmetric(horizontal: 12),
-                child: Center(child: Text("Post", style: TextStyle(color: AppColors.white, fontSize: 18),textAlign: TextAlign.center,)),
-                height: 47,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: AppColors.mainOrangeColor
+                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  child: Center(child: Text("Post", style: TextStyle(color: AppColors.white, fontSize: 18),textAlign: TextAlign.center,)),
+                  height: 47,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    color: AppColors.mainOrangeColor
+                  ),
                 ),
               ),
             ],

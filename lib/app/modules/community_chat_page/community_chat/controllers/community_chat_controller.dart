@@ -2,18 +2,25 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
 class CommunityChatController extends GetxController {
+  // Stream to fetch posts from Firestore
+  Rx<List<DocumentSnapshot>> posts = Rx<List<DocumentSnapshot>>([]);
 
   @override
   void onInit() {
     super.onInit();
+    // Fetch posts from Firestore
+    fetchPosts();
   }
 
-
-
-  Future<void> createPost(String message) async {
-    await FirebaseFirestore.instance.collection('posts').add({
-      'message': message,
-      'timestamp': FieldValue.serverTimestamp(),
+  // Fetch posts from Firestore
+  void fetchPosts() {
+    FirebaseFirestore.instance
+        .collection('posts')
+        .orderBy('dateAdded', descending: true) // Order by dateAdded (latest first)
+        .snapshots()
+        .listen((snapshot) {
+      // Update the posts list
+      posts.value = snapshot.docs;
     });
   }
 
@@ -26,6 +33,4 @@ class CommunityChatController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-
 }

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,104 +10,117 @@ import '../controllers/community_chat_controller.dart';
 
 class CommunityChatView extends GetView<CommunityChatController> {
   const CommunityChatView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CommunityChatView'),
+        title: const Text('Community'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-      Container(
-      padding: EdgeInsets.only(left: 10, right: 10, top: 6),
-      margin: EdgeInsets.only(bottom: 14),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: AppColors.white,
-        border:
-        Border.all(color: AppColors.black, width: 0.1),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 6,
-          ),
-          Row(
-            children: [
-              CircleAvatar(
-                radius: 21,
-                child: Center(
-                  child: Icon(Icons.person_2),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 14, right: 14),
+        child: Column(
+          children: [
+            // Obx listens for updates to the posts list
+            Obx(() {
+              if (controller.posts.value.isEmpty) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              return Expanded(
+                child: ListView.builder(
+                  itemCount: controller.posts.value.length,
+                  itemBuilder: (context, index) {
+                    DocumentSnapshot post = controller.posts.value[index];
+                    String author = post['author'];
+                    String content = post['content'];
+                    String dateAdded = post['dateAdded'];
+
+                    return Container(
+                      padding: EdgeInsets.only(left: 10, right: 10, top: 6),
+                      margin: EdgeInsets.only(bottom: 14),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: AppColors.white,
+                        border: Border.all(color: AppColors.black, width: 0.1),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 6),
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                radius: 18,
+                                child: Center(
+                                  child: Icon(Icons.person_2),
+                                ),
+                              ),
+                              SizedBox(width: 7),
+                              Expanded(
+                                child: Text(
+                                  author,
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 7),
+                          SizedBox(
+                            child: Text(
+                              content,
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
+                          SizedBox(height: 19),
+                          Row(
+                            children: [
+                              Icon(
+                                CupertinoIcons.calendar,
+                                color: AppColors.black,
+                                size: 16,
+                              ),
+                              SizedBox(width: 4),
+                              Text(
+                                dateAdded, // You can format the date here if necessary
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                        ],
+                      ),
+                    );
+                  },
                 ),
-              ),
-
-
-              SizedBox(width: 7),
-              Expanded(
-                child: Text(
-                  "post.author!.firstName.toString()",
-
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 7,
-          ),
-          SizedBox(
-            child: Text(
-              "post.description.toString()",
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-              maxLines: 4,
-            ),
-          ),
-          SizedBox(
-            height: 19,
-          ),
-          Row(
-            children: [
-              Icon(
-                CupertinoIcons.calendar,
-                color: AppColors.black,
-                size: 16,
-              ),
-              SizedBox(
-                width: 4,
-              ),
-              Text(
-                "controller.formattedDate(post.createdDate),",
-                style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.black),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-        ],
+              );
+            }),
+          ],
+        ),
       ),
-    ),]),
-
-
       floatingActionButton: FloatingActionButton(
-
         elevation: 0,
-          onPressed: (){
+        onPressed: () {
           Get.toNamed(Routes.ADD_POST);
-          },
-        child: Icon(Icons.add, color: AppColors.white,),
+        },
+        child: Icon(
+          Icons.add,
+          color: AppColors.white,
+        ),
         backgroundColor: AppColors.mainOrangeColor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

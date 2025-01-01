@@ -12,6 +12,7 @@ class AppThemes {
     centerTitle: true,
     elevation: 0,
    titleTextStyle: TextStyle(
+     color: AppColors.black,
      fontSize: 17
    ),
     backgroundColor: AppColors.backgroundColor, // App bar background color
