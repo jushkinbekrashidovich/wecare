@@ -1,9 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class AddPostController extends GetxController {
-  //TODO: Implement AddPostController
+  final focusNode = FocusNode();
+  final RxBool test = false.obs;
+  final textEditingController = TextEditingController();
 
-  final count = 0.obs;
+
+
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +22,4 @@ class AddPostController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
