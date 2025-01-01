@@ -10,6 +10,7 @@ abstract class Routes {
   static const MAIN = _Paths.MAIN;
   static const HOTLINE_NUMBERS = _Paths.HOTLINE_NUMBERS;
   static const ADD_POST = _Paths.ADD_POST;
+  static const BLOG_POST_DETAILS = _Paths.BLOG_POST_DETAILS;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const MAIN = '/main';
   static const HOTLINE_NUMBERS = '/hotline-numbers';
   static const ADD_POST = '/add-post';
+  static const BLOG_POST_DETAILS = '/blog-post-details';
 }

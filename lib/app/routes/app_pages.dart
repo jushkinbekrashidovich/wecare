@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
+import 'package:wecare/app/modules/blogs_page/blog_post_details/bindings/blog_post_details_binding.dart';
 
+
+import '../modules/blogs_page/blog_post_details/views/blog_post_details_view.dart';
 import '../modules/blogs_page/blogs/bindings/blogs_binding.dart';
 import '../modules/blogs_page/blogs/views/blogs_view.dart';
 import '../modules/community_chat_page/add_post/bindings/add_post_binding.dart';
@@ -57,6 +60,11 @@ class AppPages {
       name: _Paths.ADD_POST,
       page: () => const AddPostView(),
       binding: AddPostBinding(),
+    ),
+    GetPage(
+      name: _Paths.BLOG_POST_DETAILS,
+      page: () => const BlogPostDetailsView(),
+      binding: BlogPostDetailsBinding(),
     ),
   ];
 }
