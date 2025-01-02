@@ -1,13 +1,18 @@
+import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
+import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:get/get.dart';
+import 'package:wecare/app/const/consts.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
 
-  final count = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
   }
+
+
+
 
   @override
   void onReady() {
@@ -19,5 +24,5 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+
 }
