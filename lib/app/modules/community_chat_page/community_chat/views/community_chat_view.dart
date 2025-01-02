@@ -39,7 +39,8 @@ class CommunityChatView extends GetView<CommunityChatController> {
 
                     return GestureDetector(
                       onTap: () {
-                        // Handle tap if needed
+                        Get.toNamed(Routes.COMMUNITY_CHAT_DETAILS, arguments: {'postID':post.id});
+
                       },
                       child: Container(
                         padding: EdgeInsets.only(left: 10, right: 10, top: 6),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wecare/app/routes/app_pages.dart';
 
 import '../../../../const/theme/app_colors.dart';
+import '../../../../routes/app_pages.dart';
 import '../controllers/blogs_controller.dart';
 
 class BlogsView extends GetView<BlogsController> {

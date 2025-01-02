@@ -11,6 +11,7 @@ abstract class Routes {
   static const HOTLINE_NUMBERS = _Paths.HOTLINE_NUMBERS;
   static const ADD_POST = _Paths.ADD_POST;
   static const BLOG_POST_DETAILS = _Paths.BLOG_POST_DETAILS;
+  static const COMMUNITY_CHAT_DETAILS = _Paths.COMMUNITY_CHAT_DETAILS;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const HOTLINE_NUMBERS = '/hotline-numbers';
   static const ADD_POST = '/add-post';
   static const BLOG_POST_DETAILS = '/blog-post-details';
+  static const COMMUNITY_CHAT_DETAILS = '/community-chat-details';
 }

@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
-import 'package:wecare/app/modules/blogs_page/blog_post_details/bindings/blog_post_details_binding.dart';
 
-
+import '../modules/blogs_page/blog_post_details/bindings/blog_post_details_binding.dart';
 import '../modules/blogs_page/blog_post_details/views/blog_post_details_view.dart';
 import '../modules/blogs_page/blogs/bindings/blogs_binding.dart';
 import '../modules/blogs_page/blogs/views/blogs_view.dart';
@@ -9,6 +8,8 @@ import '../modules/community_chat_page/add_post/bindings/add_post_binding.dart';
 import '../modules/community_chat_page/add_post/views/add_post_view.dart';
 import '../modules/community_chat_page/community_chat/bindings/community_chat_binding.dart';
 import '../modules/community_chat_page/community_chat/views/community_chat_view.dart';
+import '../modules/community_chat_page/community_chat_details/bindings/community_chat_details_binding.dart';
+import '../modules/community_chat_page/community_chat_details/views/community_chat_details_view.dart';
 import '../modules/home_page/home/bindings/home_binding.dart';
 import '../modules/home_page/home/views/home_view.dart';
 import '../modules/main/bindings/main_binding.dart';
@@ -65,6 +66,11 @@ class AppPages {
       name: _Paths.BLOG_POST_DETAILS,
       page: () => const BlogPostDetailsView(),
       binding: BlogPostDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.COMMUNITY_CHAT_DETAILS,
+      page: () => const CommunityChatDetailsView(),
+      binding: CommunityChatDetailsBinding(),
     ),
   ];
 }
