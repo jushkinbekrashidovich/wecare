@@ -1,5 +1,4 @@
-import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
-import 'package:dash_chat_2/dash_chat_2.dart';
+
 import 'package:get/get.dart';
 import 'package:wecare/app/const/consts.dart';
 
