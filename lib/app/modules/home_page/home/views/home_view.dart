@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:wecare/app/const/theme/app_colors.dart';
+import 'package:wecare/app/routes/app_pages.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -48,19 +49,21 @@ class HomeView extends GetView<HomeController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildMoodIcon(Icons.sentiment_satisfied_alt, "Happy", Colors.pink),
-                _buildMoodIcon(Icons.nights_stay, "Calm", Colors.blue),
-                _buildMoodIcon(Icons.sync_alt, "Manic", Colors.cyan),
-                _buildMoodIcon(Icons.sentiment_very_dissatisfied, "Angry", Colors.orange),
-                _buildMoodIcon(Icons.sentiment_dissatisfied, "Sad", Colors.green),
+                _buildMoodIcon(icon:  Icons.sentiment_satisfied_alt, label: "Happy", color:  Colors.pink, ontap: (){
+                  Get.toNamed(Routes.MOOD_EXERCISES);
+                }),
+                _buildMoodIcon(icon:  Icons.nights_stay,label: "Calm", color:Colors.blue, ontap: (){}),
+                _buildMoodIcon(icon:  Icons.sync_alt, label: "Manic",color:  Colors.cyan, ontap: (){}),
+                _buildMoodIcon(icon:  Icons.sentiment_very_dissatisfied, label: "Angry", color:  Colors.orange, ontap: (){}),
+                _buildMoodIcon(icon:  Icons.sentiment_dissatisfied, label: "Sad", color:  Colors.green, ontap: (){}),
               ],
             ),
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildCardButton("Journal", Icons.book, Colors.brown),
-                _buildCardButton("Library", Icons.library_books, Colors.brown),
+                _buildCardButton("Journal", Icons.book, AppColors.mainOrangeColor),
+                _buildCardButton("Library", Icons.library_books, AppColors.mainOrangeColor),
               ],
             ),
             SizedBox(height: 20),
@@ -92,20 +95,25 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  Widget _buildMoodIcon(IconData icon, String label, Color color) {
-    return Column(
-      children: [
-        CircleAvatar(
-          radius: 30,
-          backgroundColor: color.withOpacity(0.2),
-          child: Icon(icon, color: color, size: 30),
-        ),
-        SizedBox(height: 5),
-        Text(
-          label,
-          style: TextStyle(fontSize: 12, color: Colors.black87),
-        ),
-      ],
+  Widget _buildMoodIcon({required IconData icon, required String label, required Color color, required Function ontap  }) {
+    return GestureDetector(
+      onTap: (){
+     ontap();
+      },
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundColor: color.withOpacity(0.2),
+            child: Icon(icon, color: color, size: 30),
+          ),
+          SizedBox(height: 5),
+          Text(
+            label,
+            style: TextStyle(fontSize: 12, color: Colors.black87),
+          ),
+        ],
+      ),
     );
   }
 

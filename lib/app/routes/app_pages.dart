@@ -14,6 +14,8 @@ import '../modules/home_page/home/bindings/home_binding.dart';
 import '../modules/home_page/home/views/home_view.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
+import '../modules/mood_exercises/bindings/mood_exercises_binding.dart';
+import '../modules/mood_exercises/views/mood_exercises_view.dart';
 import '../modules/support_centre_page/hotline_numbers/bindings/hotline_numbers_binding.dart';
 import '../modules/support_centre_page/hotline_numbers/views/hotline_numbers_view.dart';
 import '../modules/support_centre_page/support_centre/bindings/support_centre_binding.dart';
@@ -71,6 +73,11 @@ class AppPages {
       name: _Paths.COMMUNITY_CHAT_DETAILS,
       page: () => const CommunityChatDetailsView(),
       binding: CommunityChatDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.MOOD_EXERCISES,
+      page: () => const MoodExercisesView(),
+      binding: MoodExercisesBinding(),
     ),
   ];
 }
