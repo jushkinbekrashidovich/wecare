@@ -10,8 +10,12 @@ import '../modules/community_chat_page/community_chat/bindings/community_chat_bi
 import '../modules/community_chat_page/community_chat/views/community_chat_view.dart';
 import '../modules/community_chat_page/community_chat_details/bindings/community_chat_details_binding.dart';
 import '../modules/community_chat_page/community_chat_details/views/community_chat_details_view.dart';
+import '../modules/home_page/add_journal/bindings/add_journal_binding.dart';
+import '../modules/home_page/add_journal/views/add_journal_view.dart';
 import '../modules/home_page/home/bindings/home_binding.dart';
 import '../modules/home_page/home/views/home_view.dart';
+import '../modules/home_page/journal/bindings/journal_binding.dart';
+import '../modules/home_page/journal/views/journal_view.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/mood_exercises/bindings/mood_exercises_binding.dart';
@@ -78,6 +82,16 @@ class AppPages {
       name: _Paths.MOOD_EXERCISES,
       page: () => const MoodExercisesView(),
       binding: MoodExercisesBinding(),
+    ),
+    GetPage(
+      name: _Paths.JOURNAL,
+      page: () => const JournalView(),
+      binding: JournalBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_JOURNAL,
+      page: () => const AddJournalView(),
+      binding: AddJournalBinding(),
     ),
   ];
 }

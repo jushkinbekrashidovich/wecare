@@ -13,6 +13,8 @@ abstract class Routes {
   static const BLOG_POST_DETAILS = _Paths.BLOG_POST_DETAILS;
   static const COMMUNITY_CHAT_DETAILS = _Paths.COMMUNITY_CHAT_DETAILS;
   static const MOOD_EXERCISES = _Paths.MOOD_EXERCISES;
+  static const JOURNAL = _Paths.JOURNAL;
+  static const ADD_JOURNAL = _Paths.ADD_JOURNAL;
 }
 
 abstract class _Paths {
@@ -27,4 +29,6 @@ abstract class _Paths {
   static const BLOG_POST_DETAILS = '/blog-post-details';
   static const COMMUNITY_CHAT_DETAILS = '/community-chat-details';
   static const MOOD_EXERCISES = '/mood-exercises';
+  static const JOURNAL = '/journal';
+  static const ADD_JOURNAL = '/add-journal';
 }

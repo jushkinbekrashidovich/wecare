@@ -71,8 +71,14 @@ class HomeView extends GetView<HomeController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildCardButton("Journal", Icons.book, AppColors.mainOrangeColor),
-                _buildCardButton("Library", Icons.library_books, AppColors.mainOrangeColor),
+                _buildCardButton(label:  "Journal", icon: Icons.book,color:  AppColors.mainOrangeColor, ontap: (){
+                  Get.toNamed(Routes.JOURNAL);
+                }),
+                _buildCardButton(label:  "Library", icon: Icons.library_books,color:  AppColors.mainOrangeColor,
+                ontap: (){
+
+                }
+                ),
               ],
             ),
             SizedBox(height: 20),
@@ -82,7 +88,7 @@ class HomeView extends GetView<HomeController> {
                 color: Colors.grey.shade100,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.format_quote, color: Colors.grey),
                   SizedBox(width: 10),
@@ -95,7 +101,7 @@ class HomeView extends GetView<HomeController> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+           const  SizedBox(height: 20),
 
 
           ],
@@ -126,21 +132,26 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  Widget _buildCardButton(String label, IconData icon, Color color) {
-    return Container(
-      width: 150,
-      height: 80,
-      decoration: BoxDecoration(
-        color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, color: color),
-          SizedBox(height: 5),
-          Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-        ],
+  Widget _buildCardButton({required String label, required IconData icon, required Color color, required Function ontap}) {
+    return GestureDetector(
+      onTap: (){
+        ontap();
+      },
+      child: Container(
+        width: 150,
+        height: 80,
+        decoration: BoxDecoration(
+          color: Colors.grey.shade200,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, color: color),
+            SizedBox(height: 5),
+            Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
+          ],
+        ),
       ),
     );
   }
