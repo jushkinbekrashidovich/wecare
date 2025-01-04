@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wecare/app/routes/app_pages.dart';
 import '../controllers/journal_controller.dart';
 
 class JournalView extends GetView<JournalController> {
@@ -58,7 +59,7 @@ class JournalView extends GetView<JournalController> {
       }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _showAddJournalDialog(context); // Add a new journal entry
+         Get.toNamed(Routes.ADD_JOURNAL); // Add a new journal entry
         },
         child: const Icon(Icons.add),
       ),

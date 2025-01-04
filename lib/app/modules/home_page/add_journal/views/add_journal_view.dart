@@ -7,9 +7,10 @@ class AddJournalView extends GetView<AddJournalController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return   Obx(() =>
+      Scaffold(
       appBar: AppBar(
-        title: const Text('Add Journal'),
+        title:  Text('${controller.date.value.isNotEmpty ? controller.date.value : DateTime.now().toIso8601String().split('T')[0]}', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, wordSpacing: 5),),
         centerTitle: true,
       ),
       body: Padding(
@@ -17,20 +18,9 @@ class AddJournalView extends GetView<AddJournalController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Content TextField
-            Obx(() => TextField(
-              onChanged: (value) => controller.content.value = value,
-              maxLines: 4,
-              decoration: const InputDecoration(
-                labelText: 'Content',
-                border: OutlineInputBorder(),
-              ),
-            )),
-            const SizedBox(height: 16),
-
             // Mood Selection
             const Text('Mood:', style: TextStyle(fontSize: 16)),
-            Obx(() => Row(
+            Row(
               children: [
                 _moodButton('happy', '😊', controller),
                 const SizedBox(width: 8),
@@ -38,15 +28,23 @@ class AddJournalView extends GetView<AddJournalController> {
                 const SizedBox(width: 8),
                 _moodButton('mad', '😡', controller),
               ],
-            )),
+            ),
+            const SizedBox(height: 16),
+            // Content TextField
+           TextField(
+              onChanged: (value) => controller.content.value = value,
+              maxLines: 4,
+              decoration: const InputDecoration(
+                labelText: 'Content',
+                border: OutlineInputBorder(),
+              ),
+            ),
             const SizedBox(height: 16),
 
+
+
             // Date Display
-            Obx(() => Text(
-              'Date: ${controller.date.value.isNotEmpty ? controller.date.value : DateTime.now().toIso8601String().split('T')[0]}',
-              style: const TextStyle(fontSize: 16),
-            )),
-            const Spacer(),
+
 
             // Save Button
             ElevatedButton(
@@ -58,8 +56,7 @@ class AddJournalView extends GetView<AddJournalController> {
             ),
           ],
         ),
-      ),
-    );
+      ),));
   }
 
   Widget _moodButton(String mood, String emoji, AddJournalController controller) {
