@@ -9,8 +9,8 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(20),
-      padding: EdgeInsets.all(20),
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: isPast? AppColors.completedIndicatorBackground :AppColors.upcomingIndicatorBackground,
         borderRadius: BorderRadius.circular(6)

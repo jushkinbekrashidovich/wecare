@@ -31,8 +31,8 @@ class MyTimeLineTile extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(textcontent, style: TextStyle(color:isPast? AppColors.white:Colors.blueGrey, fontWeight: FontWeight.w800),),
-           Icon(Icons.open_in_new, color: AppColors.white,weight: 2,),
+            Flexible(child: Text(textcontent, style: TextStyle(color:isPast? AppColors.white:Colors.blueGrey, fontWeight: FontWeight.w800, fontSize: 12,),maxLines: 4,overflow: TextOverflow.ellipsis, textAlign: TextAlign.start,)),
+           Icon(Icons.open_in_new, color: Colors.green,weight: 2,),
           ],
         ),isPast: isPast,),
       ),

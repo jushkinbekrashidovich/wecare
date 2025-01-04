@@ -49,13 +49,22 @@ class HomeView extends GetView<HomeController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildMoodIcon(icon:  Icons.sentiment_satisfied_alt, label: "Happy", color:  Colors.pink, ontap: (){
-                  Get.toNamed(Routes.MOOD_EXERCISES);
+                _buildMoodIcon(icon:  Icons.sentiment_satisfied_alt, label: "Happy", color:  Colors.pink,
+                    ontap: (){
+                  Get.toNamed(Routes.MOOD_EXERCISES, arguments: {"selectedMood":"Happy"});
                 }),
-                _buildMoodIcon(icon:  Icons.nights_stay,label: "Calm", color:Colors.blue, ontap: (){}),
-                _buildMoodIcon(icon:  Icons.sync_alt, label: "Manic",color:  Colors.cyan, ontap: (){}),
-                _buildMoodIcon(icon:  Icons.sentiment_very_dissatisfied, label: "Angry", color:  Colors.orange, ontap: (){}),
-                _buildMoodIcon(icon:  Icons.sentiment_dissatisfied, label: "Sad", color:  Colors.green, ontap: (){}),
+                _buildMoodIcon(icon:  Icons.nights_stay,label: "Calm", color:Colors.blue, ontap: (){
+                  Get.toNamed(Routes.MOOD_EXERCISES, arguments: {"selectedMood":"Calm"});
+                }),
+                _buildMoodIcon(icon:  Icons.sync_alt, label: "Manic",color:  Colors.cyan, ontap: (){
+                  Get.toNamed(Routes.MOOD_EXERCISES, arguments: {"selectedMood":"Manic"});
+                }),
+                _buildMoodIcon(icon:  Icons.sentiment_very_dissatisfied, label: "Angry", color:  Colors.orange, ontap: (){
+                  Get.toNamed(Routes.MOOD_EXERCISES, arguments: {"selectedMood":"Angry"});
+                }),
+                _buildMoodIcon(icon:  Icons.sentiment_dissatisfied, label: "Sad", color:  Colors.green, ontap: (){
+                  Get.toNamed(Routes.MOOD_EXERCISES, arguments: {"selectedMood":"Sad"});
+                }),
               ],
             ),
             SizedBox(height: 20),
