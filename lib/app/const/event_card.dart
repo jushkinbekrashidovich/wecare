@@ -12,7 +12,7 @@ class EventCard extends StatelessWidget {
       margin: EdgeInsets.all(20),
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isPast? AppColors.upcomingIndicatorBackground :AppColors.completedIndicatorBackground,
+        color: isPast? AppColors.completedIndicatorBackground :AppColors.upcomingIndicatorBackground,
         borderRadius: BorderRadius.circular(6)
       ),
       child:child,

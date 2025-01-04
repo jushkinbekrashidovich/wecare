@@ -26,9 +26,13 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
           children: [
-            MyTimeLineTile(isFirst: true, isLast: false, isPast: true, eventCard: Text("data"),),
-            MyTimeLineTile(isFirst: false, isLast: false, isPast: true, eventCard: Text("data"),),
-            MyTimeLineTile(isFirst: false, isLast: true, isPast: false, eventCard: Text("data", style: TextStyle(color: AppColors.white),),),
+            Text("Small steps to help you feel better 😊️️️️️️", style: TextStyle(fontSize: 18, color: AppColors.black),),
+            SizedBox(height: 7,),
+            MyTimeLineTile(isFirst: true, isLast: false, isPast: true, textcontent: "Data",),
+            MyTimeLineTile(isFirst: false, isLast: false, isPast: true,textcontent: "Data",),
+            MyTimeLineTile(isFirst: false, isLast: false, isPast: true, textcontent: "Data",),
+            MyTimeLineTile(isFirst: false, isLast: false, isPast: false, textcontent: "Data",),
+            MyTimeLineTile(isFirst: false, isLast: true, isPast: false, textcontent: "Data",),
 
           ],
         ),

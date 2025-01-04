@@ -11,7 +11,7 @@ void main() async{
   await Firebase.initializeApp();
   runApp(
     GetMaterialApp(
-      title: "Application",
+      title: "iCare",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       theme: AppThemes.light,
