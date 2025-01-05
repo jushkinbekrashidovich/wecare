@@ -16,6 +16,8 @@ import '../modules/home_page/home/bindings/home_binding.dart';
 import '../modules/home_page/home/views/home_view.dart';
 import '../modules/home_page/journal/bindings/journal_binding.dart';
 import '../modules/home_page/journal/views/journal_view.dart';
+import '../modules/home_page/journal_details/bindings/journal_details_binding.dart';
+import '../modules/home_page/journal_details/views/journal_details_view.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/mood_exercises/bindings/mood_exercises_binding.dart';
@@ -92,6 +94,11 @@ class AppPages {
       name: _Paths.ADD_JOURNAL,
       page: () => const AddJournalView(),
       binding: AddJournalBinding(),
+    ),
+    GetPage(
+      name: _Paths.JOURNAL_DETAILS,
+      page: () => const JournalDetailsView(),
+      binding: JournalDetailsBinding(),
     ),
   ];
 }

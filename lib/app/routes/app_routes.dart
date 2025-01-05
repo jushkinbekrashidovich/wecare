@@ -15,6 +15,7 @@ abstract class Routes {
   static const MOOD_EXERCISES = _Paths.MOOD_EXERCISES;
   static const JOURNAL = _Paths.JOURNAL;
   static const ADD_JOURNAL = _Paths.ADD_JOURNAL;
+  static const JOURNAL_DETAILS = _Paths.JOURNAL_DETAILS;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const MOOD_EXERCISES = '/mood-exercises';
   static const JOURNAL = '/journal';
   static const ADD_JOURNAL = '/add-journal';
+  static const JOURNAL_DETAILS = '/journal-details';
 }

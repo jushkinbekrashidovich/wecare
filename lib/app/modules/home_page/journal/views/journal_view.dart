@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wecare/app/const/theme/app_colors.dart';
 import 'package:wecare/app/routes/app_pages.dart';
 import '../controllers/journal_controller.dart';
 
@@ -33,24 +34,41 @@ class JournalView extends GetView<JournalController> {
           itemCount: controller.journals.length,
           itemBuilder: (context, index) {
             final journal = controller.journals[index];
+            String _getMoodEmoji(String? mood) {
+              switch (mood) {
+                case 'happy':
+                  return '😊';
+                case 'sad':
+                  return '😢';
+                case 'mad':
+                  return '😡';
+                default:
+                  return 'Unknown';
+              }
+            }
             return Card(
+              shadowColor: AppColors.mainLighterOrangeColor,
+              elevation: 0,
+              color: AppColors.mainLighterOrangeColor,
               margin: const EdgeInsets.all(8.0),
               child: ListTile(
                 title: Text(
-                  journal['content'] ?? 'No Content',
+                  journal['date'],
+                  style: TextStyle(fontWeight: FontWeight.w600),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                subtitle: Text(
-                  'Mood: ${journal['mood'] ?? 'Unknown'} | Date: ${journal['date'] ?? 'N/A'}',
+                subtitle:
+                Text(
+                  '${_getMoodEmoji(journal['mood'])}',
                 ),
                 trailing: IconButton(
                   icon: const Icon(Icons.delete, color: Colors.red),
                   onPressed: () => _showDeleteConfirmation(index),
                 ),
                 onTap: () {
-                  // Optionally show journal details or navigate to another screen
-                  Get.snackbar('Journal Content', journal['content'] ?? 'No Content');
+                  var args = {'mood':journal['mood'], 'content':journal['content'], 'date':journal['date']};
+                  Get.toNamed(Routes.JOURNAL_DETAILS, arguments: args);
                 },
               ),
             );
@@ -58,10 +76,13 @@ class JournalView extends GetView<JournalController> {
         );
       }),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.mainOrangeColor,
+
+        elevation: 0,
         onPressed: () {
          Get.toNamed(Routes.ADD_JOURNAL); // Add a new journal entry
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add, color: AppColors.white,),
       ),
     );
   }
@@ -69,7 +90,7 @@ class JournalView extends GetView<JournalController> {
   void _showDeleteConfirmation(int index) {
     Get.dialog(
       AlertDialog(
-        title: const Text('Delete Journal'),
+        title: const Text('Delete Journal', style: TextStyle(color: Colors.red),),
         content: const Text('Are you sure you want to delete this journal entry?'),
         actions: [
           TextButton(
@@ -88,55 +109,4 @@ class JournalView extends GetView<JournalController> {
     );
   }
 
-  void _showAddJournalDialog(BuildContext context) {
-    final contentController = TextEditingController();
-    final moodController = TextEditingController();
-    final dateController = TextEditingController();
-
-    Get.dialog(
-      AlertDialog(
-        title: const Text('Add Journal'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: contentController,
-              decoration: const InputDecoration(labelText: 'Content'),
-            ),
-            TextField(
-              controller: moodController,
-              decoration: const InputDecoration(labelText: 'Mood'),
-            ),
-            TextField(
-              controller: dateController,
-              decoration: const InputDecoration(labelText: 'Date (e.g., 2025-01-04)'),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Get.back(),
-            child: const Text('Cancel'),
-          ),
-          TextButton(
-            onPressed: () {
-              if (contentController.text.isNotEmpty &&
-                  moodController.text.isNotEmpty &&
-                  dateController.text.isNotEmpty) {
-                controller.addJournal(
-                  contentController.text,
-                  moodController.text,
-                  dateController.text,
-                );
-                Get.back();
-              } else {
-                Get.snackbar('Error', 'All fields are required!');
-              }
-            },
-            child: const Text('Add'),
-          ),
-        ],
-      ),
-    );
-  }
 }

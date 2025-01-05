@@ -35,6 +35,6 @@ class AddJournalController extends GetxController {
     content.value = '';
     mood.value = 'happy';
     date.value = '';
-    Get.snackbar('Success', 'Journal entry saved!');
+
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wecare/app/modules/home_page/journal/controllers/journal_controller.dart';
+import '../../../../const/theme/app_colors.dart';
 import '../controllers/add_journal_controller.dart';
 
 class AddJournalView extends GetView<AddJournalController> {
@@ -19,7 +21,8 @@ class AddJournalView extends GetView<AddJournalController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Mood Selection
-            const Text('Mood:', style: TextStyle(fontSize: 16)),
+            const Text('How are you feeling today?', style: TextStyle(fontSize: 16)),
+            SizedBox(height: 5,),
             Row(
               children: [
                 _moodButton('happy', '😊', controller),
@@ -31,29 +34,39 @@ class AddJournalView extends GetView<AddJournalController> {
             ),
             const SizedBox(height: 16),
             // Content TextField
-           TextField(
-              onChanged: (value) => controller.content.value = value,
-              maxLines: 4,
-              decoration: const InputDecoration(
-                labelText: 'Content',
-                border: OutlineInputBorder(),
-              ),
-            ),
+           Expanded(
+             child: SingleChildScrollView(
+               child: TextField(
+                  onChanged: (value) => controller.content.value = value,
+                 maxLines: 1000,
+                 keyboardType: TextInputType.multiline,
+                 showCursor: true,decoration: InputDecoration(
+                 hintText: "Write.."
+               ),
+                ),
+             ),
+           ),
             const SizedBox(height: 16),
 
-
-
-            // Date Display
-
-
             // Save Button
-            ElevatedButton(
-              onPressed: () => controller.saveJournalEntry(),
-              child: const Text('Save Journal'),
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 50),
+            GestureDetector(
+              onTap: ()async{
+                controller.saveJournalEntry();
+                Get.back();
+                Get.find<JournalController>().fetchJournals();
+              },
+              child: Container(
+
+                padding: EdgeInsets.symmetric(horizontal: 12),
+                child: Center(child: Text("Save", style: TextStyle(color: AppColors.white, fontSize: 18),textAlign: TextAlign.center,)),
+                height: 47,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    color: AppColors.mainOrangeColor
+                ),
               ),
             ),
+
           ],
         ),
       ),));
