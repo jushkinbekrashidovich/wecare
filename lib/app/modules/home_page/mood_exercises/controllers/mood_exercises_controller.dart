@@ -1,7 +1,10 @@
+import 'package:confetti/confetti.dart';
 import 'package:get/get.dart';
 
 class MoodExercisesController extends GetxController {
   late String selectedMood;
+  late ConfettiController confettiController;
+
 
   // List of exercises with their statuses
   var exercises = <ExerciseItem>[].obs;
@@ -65,6 +68,14 @@ class MoodExercisesController extends GetxController {
         );
       }).toList(),
     );
+    confettiController = ConfettiController(duration: Duration(seconds: 1));
+  }
+
+  @override
+  void dispose() {
+
+    confettiController.dispose();
+    super.dispose();
   }
 
 
@@ -76,6 +87,8 @@ class MoodExercisesController extends GetxController {
   bool areAllExercisesCompleted() {
     return exercises.every((exercise) => exercise.isPast);
   }
+
+
 }
 
 

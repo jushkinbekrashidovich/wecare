@@ -11,11 +11,13 @@ class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Obx(()=>
+
+      Scaffold(
       appBar: AppBar(
 
         title: Text(
-          "Good Afternoon,",
+          "iCare",
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -28,8 +30,8 @@ class HomeView extends GetView<HomeController> {
         children: [
 
           Text("🌷", style: TextStyle(fontSize: 20),),
-          Text("87", style: TextStyle(fontSize: 17, color: AppColors.mainOrangeColor, fontWeight: FontWeight.bold),),
-        SizedBox(width: 10,)
+          Text(controller.myFlowers.toString(), style: TextStyle(fontSize: 17, color: AppColors.mainOrangeColor, fontWeight: FontWeight.bold),),
+          SizedBox(width: 10,)
         ],
       ),
         ],
@@ -107,7 +109,7 @@ class HomeView extends GetView<HomeController> {
           ],
         ),
       ),
-    );
+    ),);
   }
 
   Widget _buildMoodIcon({required IconData icon, required String label, required Color color, required Function ontap  }) {

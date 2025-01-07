@@ -44,6 +44,7 @@ dependencies:
   timeline_tile: ^2.0.0
   slider_button: ^2.1.0
   shared_preferences: ^2.3.5
+  confetti: ^0.8.0
 
 
 dev_dependencies:
