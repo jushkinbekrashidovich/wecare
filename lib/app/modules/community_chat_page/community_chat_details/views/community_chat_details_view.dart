@@ -13,7 +13,7 @@ class CommunityChatDetailsView extends GetView<CommunityChatDetailsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Comments".tr),
+        title: Text("Comments",  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
         centerTitle: true,
         elevation: 1,
       ),
@@ -87,7 +87,7 @@ class CommunityChatDetailsView extends GetView<CommunityChatDetailsController> {
             // Comments List
             Expanded(
               child: controller.comments.isEmpty
-                  ? Center(child: Text("No comments yet."))
+                  ? Center(child: Text("This post is waiting for your support, please share your kindness ☺️️️", textAlign: TextAlign.center,))
                   : ListView.builder(
                 itemCount: controller.comments.length,
                 itemBuilder: (context, index) {

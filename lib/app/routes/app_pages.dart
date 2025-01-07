@@ -18,10 +18,12 @@ import '../modules/home_page/journal/bindings/journal_binding.dart';
 import '../modules/home_page/journal/views/journal_view.dart';
 import '../modules/home_page/journal_details/bindings/journal_details_binding.dart';
 import '../modules/home_page/journal_details/views/journal_details_view.dart';
+import '../modules/home_page/mood_exercises/bindings/mood_exercises_binding.dart';
+import '../modules/home_page/mood_exercises/views/mood_exercises_view.dart';
+import '../modules/home_page/motivation_scroll/bindings/motivation_scroll_binding.dart';
+import '../modules/home_page/motivation_scroll/views/motivation_scroll_view.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
-import '../modules/mood_exercises/bindings/mood_exercises_binding.dart';
-import '../modules/mood_exercises/views/mood_exercises_view.dart';
 import '../modules/support_centre_page/hotline_numbers/bindings/hotline_numbers_binding.dart';
 import '../modules/support_centre_page/hotline_numbers/views/hotline_numbers_view.dart';
 import '../modules/support_centre_page/support_centre/bindings/support_centre_binding.dart';
@@ -39,66 +41,85 @@ class AppPages {
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
+      transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.BLOGS,
       page: () => const BlogsView(),
       binding: BlogsBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.COMMUNITY_CHAT,
       page: () => const CommunityChatView(),
       binding: CommunityChatBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.CUPPORT_CENTRE,
       page: () => const SupportCentreView(),
       binding: SupportCentreBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.MAIN,
       page: () => const MainView(),
       binding: MainBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.HOTLINE_NUMBERS,
       page: () => const HotlineNumbersView(),
       binding: HotlineNumbersBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.ADD_POST,
       page: () => const AddPostView(),
       binding: AddPostBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.BLOG_POST_DETAILS,
       page: () => const BlogPostDetailsView(),
       binding: BlogPostDetailsBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.COMMUNITY_CHAT_DETAILS,
       page: () => const CommunityChatDetailsView(),
       binding: CommunityChatDetailsBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.MOOD_EXERCISES,
       page: () => const MoodExercisesView(),
       binding: MoodExercisesBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.JOURNAL,
       page: () => const JournalView(),
       binding: JournalBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.ADD_JOURNAL,
       page: () => const AddJournalView(),
       binding: AddJournalBinding(),
+        transition: Transition.noTransition
     ),
     GetPage(
       name: _Paths.JOURNAL_DETAILS,
       page: () => const JournalDetailsView(),
       binding: JournalDetailsBinding(),
+        transition: Transition.noTransition
+    ),
+    GetPage(
+      name: _Paths.MOTIVATION_SCROLL,
+      page: () => const MotivationScrollView(),
+      binding: MotivationScrollBinding(),
+        transition: Transition.noTransition
     ),
   ];
 }

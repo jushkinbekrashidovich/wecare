@@ -79,7 +79,7 @@ class CommunityChatDetailsController extends GetxController {
 
       // Update local comments list
       comments.add({
-        'author': 'CurrentUserName', // Replace with actual username
+        'author': generateRandomUsername(), // Replace with actual username
         'content': newComment,
         'dateAdded': DateTime.now().toIso8601String(),
       });

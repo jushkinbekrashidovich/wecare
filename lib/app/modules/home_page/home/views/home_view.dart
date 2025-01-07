@@ -74,7 +74,7 @@ class HomeView extends GetView<HomeController> {
                 _buildCardButton(label:  "Journal", icon: Icons.book,color:  AppColors.mainOrangeColor, ontap: (){
                   Get.toNamed(Routes.JOURNAL);
                 }),
-                _buildCardButton(label:  "Library", icon: Icons.library_books,color:  AppColors.mainOrangeColor,
+                _buildCardButton(label:  "My Library", icon: Icons.library_books,color:  AppColors.mainOrangeColor,
                 ontap: (){
 
                 }

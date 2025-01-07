@@ -14,7 +14,7 @@ class CommunityChatView extends GetView<CommunityChatController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Community'),
+        title: const Text('Share & Support', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
         centerTitle: true,
       ),
       body: Padding(

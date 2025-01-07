@@ -12,7 +12,7 @@ class BlogsView extends GetView<BlogsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Blogs', style: TextStyle(fontSize: 17),),
+        title: const Text('Your Support Library', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
         centerTitle: true,
       ),
       body: Obx(() {
@@ -42,7 +42,7 @@ class BlogsView extends GetView<BlogsController> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(blog.author, style: const TextStyle(fontSize: 15, color: AppColors.mainLightText)),
+                        Text(blog.author, style: const TextStyle(fontSize: 13, color: AppColors.mainLightText)),
                         Text(
                           blog.date,
                           style: const TextStyle(fontSize: 13),

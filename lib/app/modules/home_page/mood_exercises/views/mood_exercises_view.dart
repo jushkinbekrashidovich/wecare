@@ -4,7 +4,7 @@ import 'package:slider_button/slider_button.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:wecare/app/const/theme/app_colors.dart';
 import 'package:wecare/app/const/time_line_tile.dart';
-import '../../../const/swiper.dart';
+import '../../../../const/swiper.dart';
 import '../controllers/mood_exercises_controller.dart';
 
 class MoodExercisesView extends GetView<MoodExercisesController> {
@@ -12,7 +12,7 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Obx(()=> Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
@@ -29,12 +29,15 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Small steps to help you feel better 😊",
-              style: TextStyle(fontSize: 18, color: AppColors.black),
+            Visibility(
+              visible: controller.isStarted.value,
+              child: Text(
+                "Small steps to help you feel better 😊",
+                style: TextStyle(fontSize: 18, color: AppColors.black),
+              ),
             ),
             const SizedBox(height: 10),
-            Expanded(
+           controller.isStarted.value? Expanded(
               child: Obx(
                     () => ListView.builder(
                   itemCount: controller.exercises.length,
@@ -57,10 +60,17 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
                   },
                 ),
               ),
+            ):Expanded(
+              child: Center(
+               child: Text("There will be small exercises to help you to feel better 😊️️️️️ ️", textAlign: TextAlign.center,style: TextStyle(fontSize: 18,),),
+                         ),
             ),
 
             SwipeToStartButton(
-              onSwipe: (){
+              text: controller.isStarted.value?  "Slide to start next exercise":"Please slide to start",
+              onSwipe: ()async{
+                controller.isStarted.value = true;
+               print(controller.isStarted.value.toString()+"hii");
 
               },
             ),
@@ -68,6 +78,6 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
           ],
         ),
       ),
-    );
+    ),);
   }
 }

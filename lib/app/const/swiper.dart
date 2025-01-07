@@ -3,8 +3,9 @@ import 'package:slider_button/slider_button.dart';
 
 class SwipeToStartButton extends StatelessWidget {
   final Function onSwipe;
+  final String text;
 
-  const SwipeToStartButton({super.key, required this.onSwipe});
+  const SwipeToStartButton({super.key, required this.onSwipe, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +15,13 @@ class SwipeToStartButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
         child: SliderButton(
           label: Text(
-            "Slide to start next exercise",
+            text,
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w600,
               fontSize: 14,
             ),
+            textAlign: TextAlign.center,
           ),
           icon: Center(
             child: Icon(
@@ -29,7 +31,7 @@ class SwipeToStartButton extends StatelessWidget {
             ),
           ),
           action: ()async{
-            onSwipe();
+           await onSwipe();
           },
           width: MediaQuery.of(context).size.width * 0.7, // Dynamic width
           height: 60, // Compact height

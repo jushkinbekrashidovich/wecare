@@ -6,6 +6,8 @@ class MoodExercisesController extends GetxController {
   // List of exercises with their statuses
   var exercises = <ExerciseItem>[].obs;
 
+  RxBool isStarted = false.obs;
+
   // Mapping mood to exercises
   final Map<String, List<String>> moodExercises = {
     "Happy": [
