@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:slider_button/slider_button.dart';
 import 'package:timeline_tile/timeline_tile.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wecare/app/const/theme/app_colors.dart';
 import 'package:wecare/app/const/time_line_tile.dart';
 import '../../../../const/swiper.dart';
@@ -38,11 +39,16 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
             ),
             const SizedBox(height: 10),
            controller.isStarted.value? Expanded(
-              child: Obx(
-                    () => ListView.builder(
+              child:  ListView.builder(
                   itemCount: controller.exercises.length,
                   itemBuilder: (context, index) {
                     final exercise = controller.exercises[index];
+    void _launchURL(String? url) async {
+    if (url != null && await canLaunch(url)) {
+    await launch(url);
+    } else {
+    throw 'Could not launch $url';
+    }}
                     return GestureDetector(
                       onTap: () {
                         // Mark the exercise as completed when tapped
@@ -55,17 +61,39 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
                         isLast: index == controller.exercises.length - 1,
                         isPast: exercise.isPast,
                         textcontent: exercise.text,
+                        ontap: (){
+                          _launchURL(exercise.url);
+                          controller.markAsPast(index);
+                        },
                       ),
                     );
                   },
                 ),
-              ),
+
             ):Expanded(
               child: Center(
                child: Text("There will be small exercises to help you to feel better 😊️️️️️ ️", textAlign: TextAlign.center,style: TextStyle(fontSize: 18,),),
                          ),
             ),
+           Visibility(
+             visible: controller.areAllExercisesCompleted(),
+             child: GestureDetector(
+             onTap: ()async{
 
+             },
+             child: Container(
+
+               padding: EdgeInsets.symmetric(horizontal: 12),
+               child: Center(child: Text("Finish", style: TextStyle(color: AppColors.white, fontSize: 18),textAlign: TextAlign.center,)),
+               height: 47,
+               decoration: BoxDecoration(
+                   borderRadius: BorderRadius.circular(6),
+                   color: AppColors.mainOrangeColor
+               ),
+             ),
+           ),),
+
+           Text("Please complete exercises one by one, once you finish the exercises, you will earn 🌷", textAlign: TextAlign.center,style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),),
             SwipeToStartButton(
               text: controller.isStarted.value?  "Slide to start next exercise":"Please slide to start",
               onSwipe: ()async{
@@ -78,6 +106,6 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
           ],
         ),
       ),
-    ),);
+    ));
   }
 }

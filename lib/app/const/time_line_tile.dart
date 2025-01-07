@@ -11,30 +11,37 @@ class MyTimeLineTile extends StatelessWidget {
   final bool isLast;
   final bool isPast;
   final String textcontent;
-  const MyTimeLineTile({super.key, required this.isFirst, required this.isLast, required this.isPast, required this.textcontent});
+  final Function ontap;
+  const MyTimeLineTile({super.key, required this.isFirst, required this.isLast, required this.isPast, required this.textcontent, required this.ontap});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: TimelineTile(
-        isFirst: isFirst,
-        isLast: isLast,
-        beforeLineStyle: LineStyle(color: isPast? AppColors.completedLineColor : AppColors.upcomingLineColor),
-        indicatorStyle: IndicatorStyle(
-          width: 30,
-          color: isPast?  AppColors.mainOrangeColor : AppColors.mainLighterOrangeColor,
-          iconStyle: IconStyle(iconData: Icons.done,color: isPast? Colors.white: AppColors.upcomingIconColor)
-        ),
+    return GestureDetector(
+      onTap: (){
+        ontap();
+      },
+      child: SizedBox(
+        height: 100,
+        child: TimelineTile(
 
-        endChild: EventCard(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Flexible(child: Text(textcontent, style: TextStyle(color:isPast? AppColors.white:Colors.blueGrey, fontWeight: FontWeight.w800, fontSize: 12,),maxLines: 4,overflow: TextOverflow.ellipsis, textAlign: TextAlign.start,)),
-           Icon(Icons.open_in_new, color: Colors.green,weight: 2,),
-          ],
-        ),isPast: isPast,),
+          isFirst: isFirst,
+          isLast: isLast,
+          beforeLineStyle: LineStyle(color: isPast? AppColors.completedLineColor : AppColors.upcomingLineColor),
+          indicatorStyle: IndicatorStyle(
+            width: 30,
+            color: isPast?  AppColors.mainOrangeColor : AppColors.mainLighterOrangeColor,
+            iconStyle: IconStyle(iconData: Icons.done,color: isPast? Colors.white: AppColors.upcomingIconColor)
+          ),
+
+          endChild: EventCard(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(child: Text(textcontent, style: TextStyle(color:isPast? AppColors.white:Colors.blueGrey, fontWeight: FontWeight.w800, fontSize: 12,),maxLines: 4,overflow: TextOverflow.ellipsis, textAlign: TextAlign.start,)),
+             Icon(Icons.open_in_new, color: Colors.green,weight: 2,),
+            ],
+          ),isPast: isPast,),
+        ),
       ),
     );
   }
