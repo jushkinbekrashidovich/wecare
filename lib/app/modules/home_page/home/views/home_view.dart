@@ -25,15 +25,20 @@ class HomeView extends GetView<HomeController> {
           ),
         ),
         actions: [
-        Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        GestureDetector(
+          onTap: (){
+            Get.toNamed(Routes.EXCHANGE);
+          },
+          child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
 
-          Text("🌷", style: TextStyle(fontSize: 20),),
-          Text(controller.myFlowers.toString(), style: TextStyle(fontSize: 17, color: AppColors.mainOrangeColor, fontWeight: FontWeight.bold),),
-          SizedBox(width: 10,)
-        ],
-      ),
+            Text("🌷", style: TextStyle(fontSize: 20),),
+            Text(controller.myFlowers.toString(), style: TextStyle(fontSize: 17, color: AppColors.mainOrangeColor, fontWeight: FontWeight.bold),),
+            SizedBox(width: 10,)
+          ],
+                ),
+        ),
         ],
       ),
       backgroundColor: Colors.white,
