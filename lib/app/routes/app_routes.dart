@@ -18,6 +18,7 @@ abstract class Routes {
   static const JOURNAL_DETAILS = _Paths.JOURNAL_DETAILS;
   static const MOTIVATION_SCROLL = _Paths.MOTIVATION_SCROLL;
   static const EXCHANGE = _Paths.EXCHANGE;
+  static const MY_LIBRARY = _Paths.MY_LIBRARY;
 }
 
 abstract class _Paths {
@@ -37,4 +38,5 @@ abstract class _Paths {
   static const JOURNAL_DETAILS = '/journal-details';
   static const MOTIVATION_SCROLL = '/motivation-scroll';
   static const EXCHANGE = '/exchange';
+  static const MY_LIBRARY = '/my-library';
 }

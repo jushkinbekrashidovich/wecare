@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -50,7 +51,7 @@ class HomeView extends GetView<HomeController> {
 
             Text(
               "How are you feeling today?",
-              style: TextStyle(fontSize: 18, color: Colors.black54),
+              style: TextStyle(fontSize: 20, color: Colors.black),
             ),
             SizedBox(height: 20),
             Row(
@@ -83,7 +84,7 @@ class HomeView extends GetView<HomeController> {
                 }),
                 _buildCardButton(label:  "My Library", icon: Icons.library_books,color:  AppColors.mainOrangeColor,
                 ontap: (){
-
+                  Get.toNamed(Routes.MY_LIBRARY);
                 }
                 ),
               ],
