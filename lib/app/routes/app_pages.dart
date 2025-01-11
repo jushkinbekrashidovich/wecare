@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/abuse_forms/bindings/abuse_forms_binding.dart';
+import '../modules/abuse_forms/views/abuse_forms_view.dart';
 import '../modules/blogs_page/blog_post_details/bindings/blog_post_details_binding.dart';
 import '../modules/blogs_page/blog_post_details/views/blog_post_details_view.dart';
 import '../modules/blogs_page/blogs/bindings/blogs_binding.dart';
@@ -120,6 +122,11 @@ class AppPages {
       name: _Paths.MY_LIBRARY,
       page: () => const MyLibraryView(),
       binding: MyLibraryBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABUSE_FORMS,
+      page: () => const AbuseFormsView(),
+      binding: AbuseFormsBinding(),
     ),
   ];
 }

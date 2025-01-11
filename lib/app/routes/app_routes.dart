@@ -19,6 +19,7 @@ abstract class Routes {
   static const MOTIVATION_SCROLL = _Paths.MOTIVATION_SCROLL;
   static const EXCHANGE = _Paths.EXCHANGE;
   static const MY_LIBRARY = _Paths.MY_LIBRARY;
+  static const ABUSE_FORMS = _Paths.ABUSE_FORMS;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const MOTIVATION_SCROLL = '/motivation-scroll';
   static const EXCHANGE = '/exchange';
   static const MY_LIBRARY = '/my-library';
+  static const ABUSE_FORMS = '/abuse-forms';
 }
