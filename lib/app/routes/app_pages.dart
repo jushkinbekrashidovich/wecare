@@ -30,6 +30,8 @@ import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/my_library/bindings/my_library_binding.dart';
 import '../modules/my_library/views/my_library_view.dart';
+import '../modules/questionnaire/bindings/questionnaire_binding.dart';
+import '../modules/questionnaire/views/questionnaire_view.dart';
 import '../modules/support_centre_page/hotline_numbers/bindings/hotline_numbers_binding.dart';
 import '../modules/support_centre_page/hotline_numbers/views/hotline_numbers_view.dart';
 import '../modules/support_centre_page/support_centre/bindings/support_centre_binding.dart';
@@ -127,6 +129,11 @@ class AppPages {
       name: _Paths.ABUSE_FORMS,
       page: () => const AbuseFormsView(),
       binding: AbuseFormsBinding(),
+    ),
+    GetPage(
+      name: _Paths.QUESTIONNAIRE,
+      page: () => const QuestionnaireView(),
+      binding: QuestionnaireBinding(),
     ),
   ];
 }

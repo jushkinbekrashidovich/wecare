@@ -20,6 +20,7 @@ abstract class Routes {
   static const EXCHANGE = _Paths.EXCHANGE;
   static const MY_LIBRARY = _Paths.MY_LIBRARY;
   static const ABUSE_FORMS = _Paths.ABUSE_FORMS;
+  static const QUESTIONNAIRE = _Paths.QUESTIONNAIRE;
 }
 
 abstract class _Paths {
@@ -41,4 +42,5 @@ abstract class _Paths {
   static const EXCHANGE = '/exchange';
   static const MY_LIBRARY = '/my-library';
   static const ABUSE_FORMS = '/abuse-forms';
+  static const QUESTIONNAIRE = '/questionnaire';
 }
