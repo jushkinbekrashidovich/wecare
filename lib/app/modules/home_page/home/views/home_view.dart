@@ -96,14 +96,14 @@ class HomeView extends GetView<HomeController> {
                 color: Colors.grey.shade100,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Row(
+              child: Row(
                 children: [
-                  Icon(Icons.format_quote, color: Colors.grey),
-                  SizedBox(width: 10),
+                  const Icon(Icons.format_quote, color: Colors.grey),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: Text(
-                      "“It is better to conquer yourself than to win a thousand battles”",
-                      style: TextStyle(fontSize: 14, color: Colors.black87),
+                      controller.selectedQuote.value,
+                      style: const TextStyle(fontSize: 14, color: Colors.black87),
                     ),
                   ),
                 ],
@@ -113,7 +113,7 @@ class HomeView extends GetView<HomeController> {
            Center(
              child: GestureDetector(
                onTap: (){
-
+                Get.offAllNamed(Routes.WEATHER_PAGE);
                },
                child: CircleAvatar(
 

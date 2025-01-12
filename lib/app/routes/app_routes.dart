@@ -22,6 +22,7 @@ abstract class Routes {
   static const ABUSE_FORMS = _Paths.ABUSE_FORMS;
   static const QUESTIONNAIRE = _Paths.QUESTIONNAIRE;
   static const SUPPORT_TYPES = _Paths.SUPPORT_TYPES;
+  static const WEATHER_PAGE = _Paths.WEATHER_PAGE;
 }
 
 abstract class _Paths {
@@ -45,4 +46,5 @@ abstract class _Paths {
   static const ABUSE_FORMS = '/abuse-forms';
   static const QUESTIONNAIRE = '/questionnaire';
   static const SUPPORT_TYPES = '/support-types';
+  static const WEATHER_PAGE = '/weather-page';
 }

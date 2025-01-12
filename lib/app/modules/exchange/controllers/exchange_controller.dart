@@ -4,36 +4,36 @@ class ExchangeController extends GetxController {
   // List of products
   final products = <Map<String, dynamic>>[
     {
-      'imageUrl': 'https://blb.uz/image/cache/catalog/image/cache/catalog/tovar18/on-amino-energy-30-ser-new-packing-700x700.webp', // Replace with actual URLs
-      'title': 'Lipstick',
+      'imageUrl': 'https://images.uzum.uz/ct9ggpniub3d1eokp2f0/original.jpg', // Replace with actual URLs
+      'title': 'Umbrella',
       'description': 'A vibrant red lipstick.',
       'market': 'Beauty Bazaar',
-      'price': 50,
+      'price': 100,
+      'rating':4.6
+    },
+    {
+      'imageUrl': 'https://images.uzum.uz/cs14vhc0u44g6joqp4rg/original.jpg',
+      'title': 'Enzyme',
+      'description': 'Vitamin C, 150 mml',
+      'market': 'Caramba store',
+      'price': 120,
+      'rating':4.2
+    },
+    {
+      'imageUrl': 'https://images.uzum.uz/cs2hhbri153t30uosbag/original.jpg',
+      'title': 'Mouthwash, for a family',
+      'description': 'Frosty freshness, medicinal herbs, 350 ml',
+      'market': 'Fire Guru',
+      'price': 110,
       'rating':4.5
     },
     {
-      'imageUrl': 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/qst/qst00392/v/12.jpg',
-      'title': 'Eyeliner',
-      'description': 'Smooth black eyeliner.',
-      'market': 'Cosmo Store',
-      'price': 30,
-      'rating':4.5
-    },
-    {
-      'imageUrl': 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/qst/qst00392/v/12.jpg',
-      'title': 'Eyeliner',
-      'description': 'Smooth black eyeliner.',
-      'market': 'Cosmo Store',
-      'price': 30,
-      'rating':4.5
-    },
-    {
-      'imageUrl': 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/qst/qst00392/v/12.jpg',
-      'title': 'Eyeliner',
-      'description': 'Smooth black eyeliner.',
-      'market': 'Cosmo Store',
-      'price': 30,
-      'rating':4.5
+      'imageUrl': 'https://images.uzum.uz/cqutn86sbq7g1s99a7r0/original.jpg',
+      'title': 'Eyebrow and eye pencil with brush, automatic, waterproof, liner',
+      'description': 'Convenient brush, microblading effect',
+      'market': 'BeautyStree',
+      'price': 130,
+      'rating':3.9
     },
     // Add more products here
   ].obs;

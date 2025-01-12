@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wecare/app/const/theme/app_colors.dart';
@@ -11,7 +12,11 @@ class ExchangeView extends GetView<ExchangeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Store'),
+        title: const Text('Store',style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: Colors.black87,
+        ),),
         centerTitle: true,
       ),
       body: Obx(
@@ -109,7 +114,22 @@ class ExchangeView extends GetView<ExchangeController> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            controller.buyProduct(index);
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) => CupertinoAlertDialog(
+                                  title: new Text("Stay tuned 😊️️️️️️"),
+                                  content: new Text("We're working on this feature, and it'll be ready in the next update"),
+                                  actions: <Widget>[
+                                    CupertinoDialogAction(
+                                      isDefaultAction: true,
+                                      child: Text("Ok"),
+                                      onPressed: (){
+                                        Get.back();
+                                      },
+                                    ),
+                                  ],
+                                )
+                            );
                           },
                           style: ElevatedButton.styleFrom(
 
