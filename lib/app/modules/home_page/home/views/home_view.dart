@@ -109,8 +109,20 @@ class HomeView extends GetView<HomeController> {
                 ],
               ),
             ),
-           const  SizedBox(height: 20),
+           Spacer(),
+           Center(
+             child: GestureDetector(
+               onTap: (){
 
+               },
+               child: CircleAvatar(
+
+                 radius: 70,
+                 backgroundColor: Colors.red,
+                 child: Text("EXIT", textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,color: AppColors.white, fontSize: 40),),
+               ),
+             ),
+           )
 
           ],
         ),

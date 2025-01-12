@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-import '../modules/abuse_forms/bindings/abuse_forms_binding.dart';
-import '../modules/abuse_forms/views/abuse_forms_view.dart';
 import '../modules/blogs_page/blog_post_details/bindings/blog_post_details_binding.dart';
 import '../modules/blogs_page/blog_post_details/views/blog_post_details_view.dart';
 import '../modules/blogs_page/blogs/bindings/blogs_binding.dart';
@@ -28,10 +26,14 @@ import '../modules/home_page/motivation_scroll/bindings/motivation_scroll_bindin
 import '../modules/home_page/motivation_scroll/views/motivation_scroll_view.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
-import '../modules/my_library/bindings/my_library_binding.dart';
-import '../modules/my_library/views/my_library_view.dart';
-import '../modules/questionnaire/bindings/questionnaire_binding.dart';
-import '../modules/questionnaire/views/questionnaire_view.dart';
+import '../modules/myLibrary/abuse_forms/bindings/abuse_forms_binding.dart';
+import '../modules/myLibrary/abuse_forms/views/abuse_forms_view.dart';
+import '../modules/myLibrary/my_library/bindings/my_library_binding.dart';
+import '../modules/myLibrary/my_library/views/my_library_view.dart';
+import '../modules/myLibrary/questionnaire/bindings/questionnaire_binding.dart';
+import '../modules/myLibrary/questionnaire/views/questionnaire_view.dart';
+import '../modules/myLibrary/support_types/bindings/support_types_binding.dart';
+import '../modules/myLibrary/support_types/views/support_types_view.dart';
 import '../modules/support_centre_page/hotline_numbers/bindings/hotline_numbers_binding.dart';
 import '../modules/support_centre_page/hotline_numbers/views/hotline_numbers_view.dart';
 import '../modules/support_centre_page/support_centre/bindings/support_centre_binding.dart';
@@ -116,24 +118,29 @@ class AppPages {
         binding: MotivationScrollBinding(),
         transition: Transition.noTransition),
     GetPage(
-      name: _Paths.EXCHANGE,
-      page: () => const ExchangeView(),
-      binding: ExchangeBinding(),
-    ),
+        name: _Paths.EXCHANGE,
+        page: () => const ExchangeView(),
+        binding: ExchangeBinding(),
+        transition: Transition.noTransition),
     GetPage(
-      name: _Paths.MY_LIBRARY,
-      page: () => const MyLibraryView(),
-      binding: MyLibraryBinding(),
-    ),
+        name: _Paths.MY_LIBRARY,
+        page: () => const MyLibraryView(),
+        binding: MyLibraryBinding(),
+        transition: Transition.noTransition),
     GetPage(
-      name: _Paths.ABUSE_FORMS,
-      page: () => const AbuseFormsView(),
-      binding: AbuseFormsBinding(),
-    ),
+        name: _Paths.ABUSE_FORMS,
+        page: () => const AbuseFormsView(),
+        binding: AbuseFormsBinding(),
+        transition: Transition.noTransition),
     GetPage(
-      name: _Paths.QUESTIONNAIRE,
-      page: () => const QuestionnaireView(),
-      binding: QuestionnaireBinding(),
+        name: _Paths.QUESTIONNAIRE,
+        page: () => const QuestionnaireView(),
+        binding: QuestionnaireBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+      name: _Paths.SUPPORT_TYPES,
+      page: () => const SupportTypesView(),
+      binding: SupportTypesBinding(),
     ),
   ];
 }

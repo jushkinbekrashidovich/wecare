@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../const/abuse_forms.dart';
+import '../../../../const/abuse_forms.dart';
 import '../controllers/abuse_forms_controller.dart';
 
 class AbuseFormsView extends GetView<AbuseFormsController> {
@@ -11,7 +11,7 @@ class AbuseFormsView extends GetView<AbuseFormsController> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: const Text("Short Definitions"),
+        title: const Text("Short Definitions",style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
         centerTitle: true,
       ),
       body: Padding(
@@ -37,13 +37,13 @@ class AbuseFormsView extends GetView<AbuseFormsController> {
               "Controlling behavior is when someone forces you to do what they want against your will. As part of domestic violence, controlling behavior is usually made up of many individual acts which stop you from following your own wants and needs."+
                   "\nIt can affect specific parts of your life, like how you spend money, when you see friends and family, or how you behave, or it may affect many areas."+
                 "\nExamples of controlling behavior: "+
-                "\n->Making it difficult or impossible to see your friends and family."+
-               "\n->Depriving you of your basic needs, such as food, sleep, or medical help."+
-            "\n->Controlling how you are seen by others (for example, choosing your clothes or telling you what you can and cannot say)."+
-           "\n->Making your money (see also FINANCIAL ABUSE)."+
-        "\n->Stopping you from using a car (such as by taking the keys) or public transport (taking money or bus passes away)."+
-    "\n->Not allowing you to have a job or acting in ways that are aimed at getting you fired, or not allowing you to get an education or pursue your interests."+
-    "\n->Monitoring your phone or computer use or calling or texting non-stop.",
+                "\n➡Making it difficult or impossible to see your friends and family."+
+               "\n➡Depriving you of your basic needs, such as food, sleep, or medical help."+
+            "\n➡Controlling how you are seen by others (for example, choosing your clothes or telling you what you can and cannot say)."+
+           "\n➡Making your money (see also FINANCIAL ABUSE)."+
+        "\n➡Stopping you from using a car (such as by taking the keys) or public transport (taking money or bus passes away)."+
+    "\n➡Not allowing you to have a job or acting in ways that are aimed at getting you fired, or not allowing you to get an education or pursue your interests."+
+    "\n➡Monitoring your phone or computer use or calling or texting non-stop.",
             ),
             SizedBox(
               height: 10,
@@ -110,6 +110,9 @@ class AbuseFormsView extends GetView<AbuseFormsController> {
 
 
             ),
+            SizedBox(
+              height: 10,
+            ),
     AbuseFormsQA(
     title: "Stalking",
     description:
@@ -134,7 +137,9 @@ class AbuseFormsView extends GetView<AbuseFormsController> {
         "\n"
         "\n"
     ),
-
+            SizedBox(
+              height: 10,
+            ),
     AbuseFormsQA(
     title: "Cyberstalking",
     description:
@@ -151,6 +156,9 @@ class AbuseFormsView extends GetView<AbuseFormsController> {
 
 
     ),
+            SizedBox(
+              height: 10,
+            ),
     AbuseFormsQA(
     title: "Cyberstalking",
     description:
@@ -175,6 +183,9 @@ class AbuseFormsView extends GetView<AbuseFormsController> {
 
 
     ),
+            SizedBox(
+              height: 10,
+            ),
     AbuseFormsQA(
     title: "Cyberstalking",
     description:
@@ -188,6 +199,9 @@ class AbuseFormsView extends GetView<AbuseFormsController> {
             "\nIf you are experiencing gaslighting, you may feel confused, frustrated, or that you can no longer trust your own perceptions or instincts."
 
     ),
+            SizedBox(
+              height: 10,
+            ),
     AbuseFormsQA(
     title: "Online Bullying and Harassment",
     description:

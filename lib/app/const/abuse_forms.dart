@@ -10,7 +10,9 @@ class AbuseFormsQA extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: AppColors.white, borderRadius: BorderRadius.circular(10)),
+          color: AppColors.white, borderRadius: BorderRadius.circular(10),
+      border: Border.all(color: AppColors.black, width: 0.1)
+      ),
       child: ExpansionTile(
         //backgroundColor: AppColors.white,
         iconColor: AppColors.mainOrangeColor,

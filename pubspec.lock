@@ -344,6 +344,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
+  quick_quiz_view:
+    dependency: "direct main"
+    description:
+      name: quick_quiz_view
+      sha256: "93bb36ba9c78637bbd38a53956c4023ef24c03f116fc3d532d6d5f5fdc967896"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   shared_preferences:
     dependency: "direct main"
     description:

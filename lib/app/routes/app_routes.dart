@@ -21,6 +21,7 @@ abstract class Routes {
   static const MY_LIBRARY = _Paths.MY_LIBRARY;
   static const ABUSE_FORMS = _Paths.ABUSE_FORMS;
   static const QUESTIONNAIRE = _Paths.QUESTIONNAIRE;
+  static const SUPPORT_TYPES = _Paths.SUPPORT_TYPES;
 }
 
 abstract class _Paths {
@@ -43,4 +44,5 @@ abstract class _Paths {
   static const MY_LIBRARY = '/my-library';
   static const ABUSE_FORMS = '/abuse-forms';
   static const QUESTIONNAIRE = '/questionnaire';
+  static const SUPPORT_TYPES = '/support-types';
 }

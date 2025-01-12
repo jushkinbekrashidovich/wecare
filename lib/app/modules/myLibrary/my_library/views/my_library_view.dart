@@ -1,10 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
 
-import '../../../const/theme/app_colors.dart';
-import '../../../routes/app_pages.dart';
+import '../../../../const/theme/app_colors.dart';
+import '../../../../routes/app_pages.dart';
 import '../controllers/my_library_controller.dart';
 
 class MyLibraryView extends GetView<MyLibraryController> {
@@ -42,7 +43,7 @@ class MyLibraryView extends GetView<MyLibraryController> {
                   children: [
                     _buildHelpCard(
                       title: 'Forms of Abuse',
-                      iconPath: 'assets/psycho.svg',
+                      iconPath: 'assets/abuses.svg',
                       ontap: ()
                        {
                         Get.toNamed(Routes.ABUSE_FORMS);
@@ -50,29 +51,45 @@ class MyLibraryView extends GetView<MyLibraryController> {
                       },
                     ),
                     _buildHelpCard(
-                      title: 'Legal Assistance',
-                      iconPath: 'assets/legal.svg',
+                      title: 'Types of Support',
+                      iconPath: 'assets/supports.svg',
                       ontap: ()
                        {
+                         Get.toNamed(Routes.SUPPORT_TYPES);
 
 
                       },
                     ),
                     _buildHelpCard(
-                      title: 'Hotline',
-                      iconPath: 'assets/hotline.svg',
+                      title: 'Questionnaire',
+                      iconPath: 'assets/quizes.svg',
                       ontap: ()
                       async {
-                        Get.toNamed(Routes.HOTLINE_NUMBERS);
+                        Get.toNamed(Routes.QUESTIONNAIRE);
                       },
                     ),
                     _buildHelpCard(
-                      title: 'Crisis Assistance',
-                      iconPath: 'assets/crisis.svg',
+                      title: 'Helpful Videos',
+                      iconPath: 'assets/videos.svg',
 
                       ontap: ()
                        {
-
+                         showDialog(
+                             context: context,
+                             builder: (BuildContext context) => CupertinoAlertDialog(
+                               title: new Text("Stay tuned 😊️️️️️️"),
+                               content: new Text("We're working on this feature, and it'll be ready in the next update"),
+                               actions: <Widget>[
+                                 CupertinoDialogAction(
+                                   isDefaultAction: true,
+                                   child: Text("Ok"),
+                                   onPressed: (){
+                                     Get.back();
+                                   },
+                                 ),
+                               ],
+                             )
+                         );
                         }
 
 
@@ -105,8 +122,8 @@ class MyLibraryView extends GetView<MyLibraryController> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 53,
-              width: 53,
+              height: 63,
+              width: 63,
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                   color: AppColors.white,

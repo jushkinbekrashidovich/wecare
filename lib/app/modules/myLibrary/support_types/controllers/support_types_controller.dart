@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class QuestionnaireController extends GetxController {
-  //TODO: Implement QuestionnaireController
+class SupportTypesController extends GetxController {
+  //TODO: Implement SupportTypesController
 
   final count = 0.obs;
   @override
