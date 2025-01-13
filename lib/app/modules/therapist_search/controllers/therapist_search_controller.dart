@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:wecare/app/const/theme/app_colors.dart';
 
 class TherapistSearchController extends GetxController {
   // Observable list of doctors
@@ -8,16 +10,7 @@ class TherapistSearchController extends GetxController {
   void onInit() {
     super.onInit();
 
-    Future.delayed(Duration.zero, () {
-      Get.defaultDialog(
-        title: "Notice!",
-        middleText: "This is the test version. We're adding local psychologists to the app in the next update.\n Stay tuned!",
-        textConfirm: "OK",
-        onConfirm: () {
-          Get.back(); // Close the dialog
-        },
-      );
-    });
+
     fetchDoctors();
   }
 
@@ -70,5 +63,21 @@ class TherapistSearchController extends GetxController {
         "profileImage": "prof5.png",
       },
     ];
+  }
+
+  @override
+  void onReady() {
+    Future.delayed(Duration.zero, () {
+      Get.defaultDialog(
+        title: "Notice!",
+        middleText: "This is the test version. We're adding local psychologists to the app in the next update.\n Stay tuned!",
+        textConfirm: "OK",
+        onConfirm: () {
+          Get.back(); // Close the dialog
+        },
+        titleStyle: TextStyle(color: AppColors.mainOrangeColor)
+      );
+    });
+    super.onReady();
   }
 }

@@ -48,7 +48,7 @@ class AboutUsView extends GetView<AboutUsController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:  [
                   Text(
-                    "iCare team",
+                    "WeCare team",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: AppColors.black,
@@ -61,8 +61,8 @@ class AboutUsView extends GetView<AboutUsController> {
                     style: TextStyle(fontSize: 14),
                   ),
                   SizedBox(height: 12),
-                  Text("Sevara Bobomurodova - App Development, FlutterFlow"),
-                  Text("Malika Islomova - Project Manager, UX/UI Designing"),
+                  Text("Sevara Bobomurodova - App development"),
+                  Text("Malika Islomova - Project Manager, UI/UX designing"),
 
                 ],
               ),
