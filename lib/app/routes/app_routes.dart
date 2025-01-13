@@ -24,6 +24,7 @@ abstract class Routes {
   static const SUPPORT_TYPES = _Paths.SUPPORT_TYPES;
   static const WEATHER_PAGE = _Paths.WEATHER_PAGE;
   static const ABOUT_US = _Paths.ABOUT_US;
+  static const THERAPIST_SEARCH = _Paths.THERAPIST_SEARCH;
 }
 
 abstract class _Paths {
@@ -49,4 +50,5 @@ abstract class _Paths {
   static const SUPPORT_TYPES = '/support-types';
   static const WEATHER_PAGE = '/weather-page';
   static const ABOUT_US = '/about-us';
+  static const THERAPIST_SEARCH = '/therapist-search';
 }

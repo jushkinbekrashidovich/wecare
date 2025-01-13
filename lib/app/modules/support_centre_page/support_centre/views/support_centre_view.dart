@@ -93,7 +93,7 @@ class SupportCentreView extends GetView<SupportCentreController> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Handle tap event (e.g., navigate to therapist search page)
+                       Get.toNamed(Routes.THERAPIST_SEARCH);
                       },
                       child: Container(
                         decoration: BoxDecoration(

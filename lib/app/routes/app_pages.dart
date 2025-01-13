@@ -40,6 +40,8 @@ import '../modules/support_centre_page/hotline_numbers/bindings/hotline_numbers_
 import '../modules/support_centre_page/hotline_numbers/views/hotline_numbers_view.dart';
 import '../modules/support_centre_page/support_centre/bindings/support_centre_binding.dart';
 import '../modules/support_centre_page/support_centre/views/support_centre_view.dart';
+import '../modules/therapist_search/bindings/therapist_search_binding.dart';
+import '../modules/therapist_search/views/therapist_search_view.dart';
 import '../modules/weather_page/bindings/weather_page_binding.dart';
 import '../modules/weather_page/views/weather_page_view.dart';
 
@@ -48,7 +50,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.WEATHER_PAGE;
+  static const INITIAL = Routes.MAIN;
 
   static final routes = [
     GetPage(
@@ -155,6 +157,11 @@ class AppPages {
       name: _Paths.ABOUT_US,
       page: () => const AboutUsView(),
       binding: AboutUsBinding(),
+    ),
+    GetPage(
+      name: _Paths.THERAPIST_SEARCH,
+      page: () => const TherapistSearchView(),
+      binding: TherapistSearchBinding(),
     ),
   ];
 }
