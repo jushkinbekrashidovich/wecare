@@ -75,7 +75,7 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
 
             ):Expanded(
               child: Center(
-               child: Text("There will be small exercises to help you to feel better 😊️️️️️ ️", textAlign: TextAlign.center,style: TextStyle(fontSize: 18,),),
+               child: Text("Let’s do a few easy exercises to help you feel better! 😊️️️", textAlign: TextAlign.center,style: TextStyle(fontSize: 18,),),
                          ),
             ),
            Visibility(
@@ -87,8 +87,8 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
                showDialog(
                    context: context,
                    builder: (BuildContext context) => CupertinoAlertDialog(
-                     title: new Text("Congratulations! 🥳"),
-                     content: new Text("You've earned a 🌷!\n Go to the home page and exchange it for products."),
+                     title: new Text("Congrats! 🎉"),
+                     content: new Text("You’ve earned a 🌷!"),
                      actions: <Widget>[
                        CupertinoDialogAction(
                          isDefaultAction: true,
@@ -123,8 +123,6 @@ class MoodExercisesView extends GetView<MoodExercisesController> {
              ),
            ),),
 
-            if (controller.areAllExercisesCompleted()==false || controller.isStarted.value==true)
-              Text("Please complete exercises one by one, once you finish the exercises, you will earn 🌷", textAlign: TextAlign.center,style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),),
 
             SwipeToStartButton(
               text: controller.isStarted.value?  "Slide to start next exercise":"Please slide to start",
