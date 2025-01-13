@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/about_us/bindings/about_us_binding.dart';
+import '../modules/about_us/views/about_us_view.dart';
 import '../modules/blogs_page/blog_post_details/bindings/blog_post_details_binding.dart';
 import '../modules/blogs_page/blog_post_details/views/blog_post_details_view.dart';
 import '../modules/blogs_page/blogs/bindings/blogs_binding.dart';
@@ -148,6 +150,11 @@ class AppPages {
       name: _Paths.WEATHER_PAGE,
       page: () => const WeatherPageView(),
       binding: WeatherPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABOUT_US,
+      page: () => const AboutUsView(),
+      binding: AboutUsBinding(),
     ),
   ];
 }

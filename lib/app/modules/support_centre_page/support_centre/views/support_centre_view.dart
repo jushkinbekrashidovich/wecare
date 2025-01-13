@@ -91,6 +91,63 @@ class SupportCentreView extends GetView<SupportCentreController> {
 
                       },
                     ),
+                    GestureDetector(
+                      onTap: () {
+                        // Handle tap event (e.g., navigate to therapist search page)
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFFFF7F2),
+                          borderRadius: BorderRadius.circular(16.0),
+                          border: Border.all(color: AppColors.mainOrangeColor, width: 0.1),
+                        ),
+                        child: Stack(
+                          children: [
+                            // Column for therapist icon and text
+                            Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 63,
+                                    width: 63,
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: AppColors.white,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      "assets/svg/therapist.svg",
+                                    ),
+                                  ),
+                                  const SizedBox(height: 12),
+                                  Text(
+                                    "Therapist",
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black87,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            // Positioned pro icon at the top-right corner
+                            Positioned(
+                              top: 8,
+                              right: 8,
+                              child: Icon(
+                                Icons.monetization_on,  // Replace with your 'pro' icon, e.g., Icon or SvgPicture
+                                size: 25.0,
+                                color: AppColors.mainOrangeColor, // Adjust color as needed
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+
                   ],
                 ),
               ),

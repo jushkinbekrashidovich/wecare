@@ -16,7 +16,9 @@ class HomeView extends GetView<HomeController> {
 
       Scaffold(
       appBar: AppBar(
-
+ leading: IconButton(onPressed: (){
+Get.toNamed(Routes.ABOUT_US);
+ }, icon: Icon(CupertinoIcons.info),),
         title: Text(
           "iCare",
           style: TextStyle(
